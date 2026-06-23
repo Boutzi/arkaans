@@ -18,7 +18,7 @@ const logoDataUrl = `data:image/svg+xml;base64,${Buffer.from(logoSvg).toString("
 
 export default async function Image() {
   const font = await readFile(
-    path.join(process.cwd(), "app/fonts/notJustGroovy.woff")
+    path.join(process.cwd(), "public/fonts/notJustGroovy.woff")
   );
 
   return new ImageResponse(
