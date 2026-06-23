@@ -1,8 +1,6 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "fs/promises";
-import path from "path";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 export const alt = "Arkaans — The Hub Where It All Began.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -17,9 +15,9 @@ const logoSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 308.01 304
 const logoDataUrl = `data:image/svg+xml;base64,${Buffer.from(logoSvg).toString("base64")}`;
 
 export default async function Image() {
-  const font = await readFile(
-    path.join(process.cwd(), "public/fonts/notJustGroovy.woff")
-  );
+  const font = await fetch(
+    new URL("/fonts/notJustGroovy.woff", "https://www.arkaans.com")
+  ).then((r) => r.arrayBuffer());
 
   return new ImageResponse(
     (
