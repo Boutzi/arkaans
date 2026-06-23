@@ -25,15 +25,40 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const t = await getTranslations({ locale: params.locale, namespace: "meta" });
+  const title = t("title");
+  const description = t("description");
+
   return {
-    title: t("title"),
-    description: t("description"),
+    title: {
+      default: title,
+      template: `%s | ${title}`,
+    },
+    description,
+    metadataBase: new URL("https://www.arkaans.com"),
+    alternates: {
+      canonical: "/",
+      languages: {
+        fr: "/",
+        en: "/en",
+      },
+    },
     openGraph: {
-      title: t("title"),
-      description: t("description"),
+      type: "website",
+      title,
+      description,
       url: "https://www.arkaans.com",
       siteName: "Arkaans",
-      locale: params.locale,
+      locale: params.locale === "fr" ? "fr_FR" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      creator: "@arkaans",
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
