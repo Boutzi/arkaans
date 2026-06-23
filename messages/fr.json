@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "title": "Arkaans",
+    "description": "The hub where it all began."
+  },
+  "hero": {
+    "tagline": "The hub where it all began."
+  },
+  "links": {
+    "copilot": {
+      "title": "Arkaans Copilot",
+      "description": "Bot Discord pour la gestion de salons vocaux temporaires."
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "description": "Web, software et big data."
+    },
+    "discord": {
+      "title": "Discord",
+      "description": "Rejoindre le serveur Arkaans."
+    },
+    "github": {
+      "title": "GitHub",
+      "description": "Code source et projets open source."
+    }
+  },
+  "footer": {
+    "shop": "Boutique merch"
+  }
+}
