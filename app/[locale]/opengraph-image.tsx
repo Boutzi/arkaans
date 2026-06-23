@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Arkaans — The Hub Where It All Began.";
+export const alt = "Arkaans — The hub where it all began.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -72,7 +72,7 @@ export default async function Image() {
             fontFamily: "system-ui, sans-serif",
           }}
         >
-          The Hub Where It All Began.
+          The hub where it all began.
         </div>
       </div>
     ),
