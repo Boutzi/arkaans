@@ -11,7 +11,7 @@ export default function HomePage() {
   const t = useTranslations();
 
   return (
-    <div className="relative flex h-dvh flex-col overflow-y-auto sm:overflow-hidden">
+    <div className="relative flex h-dvh flex-col overflow-x-hidden overflow-y-auto sm:overflow-hidden">
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/5 blur-[100px]" />
@@ -64,10 +64,7 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 flex shrink-0 items-center justify-between px-6 py-4">
-        <span className="text-xs text-white/20">
-          Arkaans © 2014–{new Date().getFullYear()}
-        </span>
+      <footer className="relative z-10 flex shrink-0 flex-col items-center gap-2 px-6 py-4">
         <div className="flex items-center gap-4">
           <a
             href="mailto:contact@arkaans.com"
@@ -85,6 +82,9 @@ export default function HomePage() {
             {t("footer.shop")} ↗
           </a>
         </div>
+        <span className="text-xs text-white/20">
+          Arkaans © 2014–{new Date().getFullYear()}
+        </span>
       </footer>
     </div>
   );
