@@ -82,8 +82,34 @@ export default async function LocaleLayout({
 
   const messages = await getMessages();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Arkaans",
+    url: "https://www.arkaans.com",
+    logo: "https://www.arkaans.com/logo.svg",
+    description: "Ce qui reste d'une grande aventure. Arkaans, c'était une communauté de joueurs depuis 2014. Aujourd'hui, c'est mon hub perso où tout a commencé.",
+    email: "contact@arkaans.com",
+    foundingDate: "2014",
+    founder: {
+      "@type": "Person",
+      name: "Joseph Girardi",
+      alternateName: "Boutzi",
+    },
+    sameAs: [
+      "https://github.com/Boutzi",
+      "https://discord.gg/BgRwHfK",
+    ],
+  };
+
   return (
     <html lang={locale} className={`${inter.variable} ${notJustGroovy.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans text-white antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
