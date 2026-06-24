@@ -1,9 +1,8 @@
 import { useTranslations } from "next-intl";
-import { Bot, Code2 } from "lucide-react";
+import { Bot } from "lucide-react";
 import { ArkaansIcon } from "@/components/icons/ArkaansIcon";
 import { ArkaansLogo } from "@/components/icons/ArkaansLogo";
 import { DiscordIcon } from "@/components/icons/DiscordIcon";
-import { GithubIcon } from "@/components/icons/GithubIcon";
 import { HubCard } from "@/components/HubCard";
 import { LangSwitcher } from "@/components/LangSwitcher";
 
@@ -37,54 +36,65 @@ export default function HomePage() {
         {/* Cards */}
         <div className="grid w-full max-w-lg grid-cols-1 gap-2.5 sm:grid-cols-2">
           <HubCard
-            href="https://copilot.arkaans.com"
-            icon={<Bot size={18} strokeWidth={1.5} />}
-            title={t("links.copilot.title")}
-            description={t("links.copilot.description")}
-          />
-          <HubCard
-            href="https://joe.arkaans.com"
-            icon={<Code2 size={18} strokeWidth={1.5} />}
-            title={t("links.portfolio.title")}
-            description={t("links.portfolio.description")}
-          />
-          <HubCard
             href="https://discord.gg/BgRwHfK"
             icon={<DiscordIcon size={18} />}
             title={t("links.discord.title")}
             description={t("links.discord.description")}
           />
           <HubCard
-            href="https://github.com/Boutzi"
-            icon={<GithubIcon size={18} />}
-            title={t("links.github.title")}
-            description={t("links.github.description")}
+            href="https://copilot.arkaans.com"
+            icon={<Bot size={18} strokeWidth={1.5} />}
+            title={t("links.copilot.title")}
+            description={t("links.copilot.description")}
           />
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="relative z-10 flex shrink-0 flex-col items-center gap-2 px-6 py-4">
-        <div className="flex items-center gap-4">
-          <a
-            href="mailto:contact@arkaans.com"
-            className="text-xs text-white/20 transition-colors hover:text-white/40"
-          >
-            contact@arkaans.com
-          </a>
+      <footer className="relative z-10 flex shrink-0 flex-col items-center gap-1.5 px-6 py-4 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-0 sm:text-left">
+
+        {/* Mobile : liens */}
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:hidden">
+          <a href="mailto:contact@arkaans.com" className="text-xs text-white/20 transition-colors hover:text-white/40">contact@arkaans.com</a>
           <span className="text-white/10">·</span>
-          <a
-            href="https://arkaans.myspreadshop.fr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-white/20 transition-colors hover:text-white/40"
-          >
-            {t("footer.shop")} ↗
-          </a>
+          <a href="https://github.com/Boutzi" target="_blank" rel="noopener noreferrer" className="text-xs text-white/20 transition-colors hover:text-white/40">GitHub ↗</a>
+          <span className="text-white/10">·</span>
+          <a href="https://arkaans.myspreadshop.fr" target="_blank" rel="noopener noreferrer" className="text-xs text-white/20 transition-colors hover:text-white/40">{t("footer.shop")} ↗</a>
         </div>
-        <span className="text-xs text-white/20">
+
+        {/* Mobile : copyright */}
+        <span className="text-xs text-white/20 sm:hidden">
           Arkaans © 2014–{new Date().getFullYear()}
         </span>
+
+        {/* Mobile : signature */}
+        <span className="text-xs text-white/20 sm:hidden">
+          {t("footer.founder")}{" "}
+          <a href="https://joe.arkaans.com" target="_blank" rel="noopener noreferrer" className="underline transition-colors hover:text-white/40 hover:no-underline">
+            Joseph &ldquo;Boutzi&rdquo; Girardi
+          </a>{" "}
+          {t("footer.foundingDate")}
+        </span>
+
+        {/* Desktop : signature à gauche */}
+        <span className="hidden text-xs text-white/20 sm:inline">
+          Arkaans © 2014–{new Date().getFullYear()} ·{" "}
+          {t("footer.founder")}{" "}
+          <a href="https://joe.arkaans.com" target="_blank" rel="noopener noreferrer" className="underline transition-colors hover:text-white/40 hover:no-underline">
+            Joseph &ldquo;Boutzi&rdquo; Girardi
+          </a>{" "}
+          {t("footer.foundingDate")}
+        </span>
+
+        {/* Desktop : liens à droite */}
+        <div className="hidden items-center gap-4 sm:flex">
+          <a href="mailto:contact@arkaans.com" className="text-xs text-white/20 transition-colors hover:text-white/40">contact@arkaans.com</a>
+          <span className="text-white/10">·</span>
+          <a href="https://github.com/Boutzi" target="_blank" rel="noopener noreferrer" className="text-xs text-white/20 transition-colors hover:text-white/40">GitHub ↗</a>
+          <span className="text-white/10">·</span>
+          <a href="https://arkaans.myspreadshop.fr" target="_blank" rel="noopener noreferrer" className="text-xs text-white/20 transition-colors hover:text-white/40">{t("footer.shop")} ↗</a>
+        </div>
+
       </footer>
     </div>
   );

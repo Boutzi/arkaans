@@ -11,20 +11,14 @@
       "title": "Arkaans Copilot",
       "description": "Discord bot for temporary voice channel management."
     },
-    "portfolio": {
-      "title": "Portfolio",
-      "description": "Web, software & big data."
-    },
     "discord": {
       "title": "Discord",
       "description": "Join the Arkaans server."
-    },
-    "github": {
-      "title": "GitHub",
-      "description": "Source code and open source projects."
     }
   },
   "footer": {
-    "shop": "Merch shop"
+    "shop": "Merch shop",
+    "founder": "Founded by",
+    "foundingDate": "on June 10, 2014."
   }
 }

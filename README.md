@@ -39,12 +39,14 @@ Arkaans était une communauté esport française fondée le 10 juin 2014, dissou
 
 ## Fonctionnalités
 
-- **Page hub single-viewport** — layout `h-dvh` sans scroll sur desktop, responsive mobile
+- **Page hub single-viewport** — layout `h-dvh` sans scroll sur desktop, responsive mobile (1 colonne)
+- **2 cartes principales** — Discord + Arkaans Copilot (projets Arkaans) ; Portfolio et GitHub en footer
 - **i18n FR/EN** — FR par défaut (`/`), EN sur `/en`, via `localePrefix: "as-needed"`
 - **Logo SVG officiel** — icône + wordmark extraits fidèlement depuis `public/logo.svg`
 - **OG image dynamique** — générée via `next/og` (Edge runtime), logo full SVG inline
 - **Favicon SVG** — `app/icon.svg` icône Arkaans
 - **Sitemap** — `app/sitemap.ts`, soumis à Google Search Console
+- **robots.txt** — `app/robots.ts`, autorise tout, pointe vers le sitemap
 - **JSON-LD schema.org** — `Organization` avec fondateur, dates, réseaux sociaux
 - **Wikidata** — entrée [Q140345205](https://www.wikidata.org/wiki/Q140345205) créée
 
@@ -61,13 +63,13 @@ arkaans/
 │   │   └── opengraph-image.tsx # OG image dynamique (Edge)
 │   ├── icon.svg                # Favicon
 │   ├── sitemap.ts              # Sitemap XML
+│   ├── robots.ts               # robots.txt
 │   └── globals.css
 ├── components/
 │   ├── icons/
 │   │   ├── ArkaansLogo.tsx     # Logo complet (icône + wordmark)
 │   │   ├── ArkaansIcon.tsx     # Icône seule
-│   │   ├── DiscordIcon.tsx
-│   │   └── GithubIcon.tsx
+│   │   └── DiscordIcon.tsx
 │   ├── HubCard.tsx             # Carte de lien
 │   └── LangSwitcher.tsx        # Toggle FR ↔ EN
 ├── i18n/
@@ -130,5 +132,5 @@ Ouvre [http://localhost:3000](http://localhost:3000).
 ---
 
 <div align="center">
-  <sub>Arkaans © 2014–2025 — Joseph "Boutzi" Girardi</sub>
+  <sub>Arkaans © 2014–2026 — Joseph "Boutzi" Girardi</sub>
 </div>
